@@ -12,11 +12,11 @@ Install dependencies:
 
 Run the app in node-webkit:
 
-`npm run nodewebkit`
+`npm run start`
 
-Compile the Sass:
+Build the app:
 
-`npm run build-css`
+`npm run build`
 
 Create a node-webkit packaged app:
 
