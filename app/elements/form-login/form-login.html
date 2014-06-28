@@ -1,8 +1,8 @@
-<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../../components/polymer/polymer.html">
 
 <polymer-element name="form-login" attributes="method action username errors" block>
   <template>
-    <link rel="stylesheet" href="../css/elements/form-login.css">
+    <link rel="stylesheet" href="css/form-login.css">
     <form method="{{method}}" action="{{action}}">
       <template if="{{errors}}">
         {{errors}}
@@ -21,14 +21,18 @@
     </form>
   </template>
   <script>
-    Polymer('form-login', {
-      username: '',
-      password: '',
-      action: '',
-      method: 'post',
-      errors: '',
-      ready: function() {
-      }
-    });
+  Polymer('form-login', {
+    username: '',
+    password: '',
+    action: '',
+    method: 'post',
+    errors: '',
+    ready: function() {
+      this.validate('form errors');
+    },
+    validate: function(msg) {
+      this.errors = msg;
+    }
+  });
   </script>
 </polymer-element>

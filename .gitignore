@@ -6,3 +6,9 @@ node_modules
 
 # Sass
 .sass-cache
+
+# App build
+/app/build.html
+
+# Node webkit build
+/build

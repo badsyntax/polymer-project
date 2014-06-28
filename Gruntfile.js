@@ -11,10 +11,22 @@ module.exports = function(grunt) {
         linux64: true
       },
       src: ['./app**/*']
-    },  
+    },
+    mocha: {
+      options: {
+        run: true,
+        reporter: 'Spec',
+        log: false
+      },
+      src: [
+        'app/elements/**/test/runner.html',
+        // '!**/index.html',
+      ]
+    }
   });
 
   grunt.loadNpmTasks('grunt-node-webkit-builder');
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.registerTask('release', ['nodewebkit']);
   grunt.registerTask('default', ['release']);
 };
