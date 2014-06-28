@@ -1,0 +1,6 @@
+/* line 1, ../../sass/elements/form-login.scss */
+:host {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+}

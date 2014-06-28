@@ -1,15 +1,17 @@
 <link rel="import" href="../components/polymer/polymer.html">
 
-<polymer-element name="site-banner">
+<polymer-element name="site-banner" attributes="name slogan" block>
   <template>
     <link rel="stylesheet" href="../css/elements/site-banner.css">
     <header>
-      <h1>Company name</h1>
-      <summary>Company logan</summary>
+      <h1>{{name}}</h1>
+      <summary>{{slogan}}</summary>
     </header>
   </template>
   <script>
     Polymer('site-banner', {
+      name: 'Company name',
+      slogan: 'Company slogan',
       ready: function() {
       }
     });

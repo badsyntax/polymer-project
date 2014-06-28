@@ -1,0 +1,34 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="form-login" attributes="method action username errors" block>
+  <template>
+    <link rel="stylesheet" href="../css/elements/form-login.css">
+    <form method="{{method}}" action="{{action}}">
+      <template if="{{errors}}">
+        {{errors}}
+      </template>
+      <div class="row">
+        <label>Username</label>
+        <input type="text" name="username" value="{{username}}" />
+      </div>
+      <div class="row">
+        <label>Password</label>
+        <input type="text" name="password" value="{{password}}" />
+      </div>
+      <div class="row">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </template>
+  <script>
+    Polymer('form-login', {
+      username: '',
+      password: '',
+      action: '',
+      method: 'post',
+      errors: '',
+      ready: function() {
+      }
+    });
+  </script>
+</polymer-element>
