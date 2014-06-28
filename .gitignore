@@ -9,6 +9,7 @@ node_modules
 
 # App build
 /app/build.html
+/app/build.js
 
 # Node webkit build
 /build
