@@ -1,23 +1,26 @@
 <link rel="import" href="../../components/polymer/polymer.html">
+<link rel="import" href="../../components/core-field/core-field.html">
+<link rel="import" href="../../components/paper-input/paper-input.html">
+<link rel="import" href="../../components/paper-button/paper-button.html">
 
 <polymer-element name="form-login" attributes="method action username errors" block>
   <template>
     <link rel="stylesheet" href="css/form-login.css">
-    <form method="{{method}}" action="{{action}}">
+    <form id="form" method="{{method}}" action="{{action}}">
       <template if="{{errors}}">
-        {{errors}}
+        <div>
+          {{errors}}
+        </div>
       </template>
-      <div class="row">
-        <label>Username</label>
-        <input type="text" name="username" value="{{username}}" />
-      </div>
-      <div class="row">
-        <label>Password</label>
-        <input type="text" name="password" value="{{password}}" />
-      </div>
-      <div class="row">
-        <button type="submit">Login</button>
-      </div>
+      <core-field>
+        <paper-input id="username" floatingLabel label="Username:" type="text" name="username" value="{{username}}" flex></paper-input>
+      </core-field>
+      <core-field>
+        <paper-input type="password" floatingLabel label="Password:"  name="username" flex></paper-input>
+      </core-field>
+      <core-field>
+        <paper-button on-click="{{submitForm}}" raisedButton label="Login" type="submit"></paper-button>
+      </core-field>
     </form>
   </template>
   <script>
@@ -28,10 +31,13 @@
     method: 'post',
     errors: '',
     ready: function() {
-      this.validate('form errors');
+      this.$.username.$.input.focus();
     },
     validate: function(msg) {
       this.errors = msg;
+    },
+    submitForm: function() {
+      this.$.username.invalid = true;
     }
   });
   </script>
