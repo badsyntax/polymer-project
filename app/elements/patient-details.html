@@ -1,0 +1,20 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="patient-details">
+  <template>
+    <span>Hello {{data.name}} {{data.surname}} from <b>patient-details</b>. This is my Shadow DOM.</span>
+    <div>Your job: {{data.job}}</div>
+     <input id="nameInput" value="{{data.job}}" />
+  </template>
+  <script>
+    Polymer('patient-details', {
+      data: {
+        name: 'Richard',
+        surname: 'Willis',
+        job: ''
+      },
+      ready: function() {
+      }
+    });
+  </script>
+</polymer-element>
