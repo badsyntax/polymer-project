@@ -1,15 +1,19 @@
-# Node modules
+# npm & node modules
 node_modules
+npm-debug.log
 
 # Bower components
-/app/components
+/web/components
 
 # Sass
 .sass-cache
 
 # App build
-/app/build.html
-/app/build.js
+/web/build.html
+/web/build.js
 
 # Node webkit build
 /build
+
+# Env config
+/config/app.json

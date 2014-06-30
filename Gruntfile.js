@@ -2,16 +2,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    nodewebkit: {
-      options: {
-        build_dir: './build',
-        mac: false,
-        win: false,
-        linux32: false,
-        linux64: true
-      },
-      src: ['./app**/*']
-    },
     mocha: {
       options: {
         run: true,
@@ -25,8 +15,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-node-webkit-builder');
   grunt.loadNpmTasks('grunt-mocha');
-  grunt.registerTask('release', ['nodewebkit']);
-  grunt.registerTask('default', ['release']);
+  grunt.registerTask('default', ['mocha']);
 };

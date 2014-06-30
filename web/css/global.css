@@ -2,3 +2,8 @@
 body {
   font-family: Arial;
 }
+
+/* line 5, global.scss */
+main {
+  padding: 20px;
+}
