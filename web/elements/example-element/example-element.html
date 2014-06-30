@@ -1,0 +1,17 @@
+<link rel="import" href="../../components/polymer/polymer.html">
+
+<polymer-element name="example-element" attributes="name slogan" block>
+  <template>
+    <link rel="stylesheet" href="css/example-element.css">
+    {{message}}
+  </template>
+  <script>
+    Polymer('example-element', {
+      ready: function() {
+      },
+      sayHi: function() {
+        this.message = 'hi';
+      }
+    });
+  </script>
+</polymer-element>

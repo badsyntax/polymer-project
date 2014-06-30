@@ -14,9 +14,7 @@
   "author": "Richard Willis",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-mocha": "^0.4.11",
-    "node-webkit-builder": "git+ssh://git@github.com/badsyntax/node-webkit-builder.git#version_fixes",
+    "node-webkit-builder": "badsyntax/node-webkit-builder#version_fixes",
     "vulcanize": "^0.3.0"
   },
   "dependencies": {

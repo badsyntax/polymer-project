@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example project test runner</title>
-    <link rel="stylesheet" href="../../../components/mocha/mocha.css" />
+    <title>Example element test runner</title>
+
+    <script src="../../../components/platform/platform.js"></script>
     <script src="../../../components/mocha/mocha.js"></script>
     <script src="../../../components/chai/chai.js"></script>
     <script src="../../../components/sinonjs/sinon.js"></script>
+
+    <link rel="stylesheet" href="../../../components/mocha/mocha.css" />
+    <link rel="import" href="../example-element.html">
   </head>
   <body>
     <div id="mocha"></div>
@@ -14,19 +18,12 @@
       this.assert = chai.assert;
       mocha.setup('bdd');
     </script>
-
+    <script src="example-element.test.js"></script>
     <script>
-    describe('A thing', function() {
-      it('Should do something', function() {
-        expect(1).to.equal(1);
-      });
-    });
-    </script>
-
-    <!-- Run the tests -->
-    <script>
+    window.addEventListener('polymer-ready', function() {
       if (window.mochaPhantomJS) mochaPhantomJS.run();
       else mocha.run();
+    });
     </script>
   </body>
 </html>
