@@ -3,17 +3,13 @@ node_modules
 npm-debug.log
 
 # Bower components
-/web/components
+/app/public/components
 
 # Sass
 .sass-cache
-
-# App build
-/web/build.html
-/web/build.js
 
 # Node webkit build
 /build
 
 # Env config
-/config/app.json
+/app/config/app.json
